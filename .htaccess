@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteRule !\.(js|gif|jpg|jpeg|png|css|txt|eot|woff|ttf|woff2|ico|webp|mp3)$ index.php?key=$1[L]
+RewriteCond %{REQUEST_URI} !^/public/
+ErrorDocument 400 /erro_400.html
+ErrorDocument 401 /erro_401.html
+ErrorDocument 403 /erro_403.html
+ErrorDocument 404 /erro_404.html
+ErrorDocument 500 /erro_500.html
+<ifModule mod_deflate.c>
+    <filesMatch "\.(js|css|html|php)$">
+        AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
+    </filesMatch>
+ </ifModule>
