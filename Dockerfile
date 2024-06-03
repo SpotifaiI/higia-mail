@@ -58,5 +58,8 @@ RUN printf '#!/bin/bash\nset -e\n\n: "${APACHE_CONFDIR:=/etc/apache2}"\n: "${APA
 RUN chmod +x /usr/local/bin/entrypoint.sh
 ENTRYPOINT /usr/local/bin/entrypoint.sh && bash
 
+WORKDIR /var/www/html/
+EXPOSE 80 443
+
 # BUILD
-# docker build --tag kzphp:latest -f path\to\project\Base.Dockerfile .
+# docker build --tag higia-mail:latest -f path\to\project\Dockerfile .

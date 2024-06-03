@@ -11,4 +11,6 @@
 
 # Rodando o Projeto
 
-Mais informações logo, logo... ⚡
+1. Renomeie o arquivo `example.env` to `.env`;
+2. Preencha os campos com os valores desejados;
+3. Execute o comando `docker compose up`.
